@@ -2,7 +2,7 @@
  
 int main() 
 { 
-      int i, loci, totall = 0, x,count= 0, time_quantum,j; 
+      int i, loci, totall = 0, x,count= 0, tq,j; 
       
 	  int wait_time = 0, turnaround_time = 0,pos,z,p[10],prior[10], a_time[10], b_time[10], tem[10],b; 
       
@@ -27,7 +27,7 @@ int main()
       }
 	   
       printf("\nEnter the Time Quantum:"); 
-      scanf("%d", &time_quantum); 
+      scanf("%d", &tq); 
       printf("\nProcess ID\t\tBurst Time\t Turnaround Time\t Waiting Time\t priorrity\n");
       for(totall = 0, i = 0; x != 0;) 
       { 
@@ -66,7 +66,7 @@ int main()
 		{
 		}
             
-			if(tem[i] <= time_quantum && tem[i] > 0) 
+			if(tem[i] <= tq && tem[i] > 0) 
             { 
                   totall = totall + tem[i]; 
                   tem[i] = 0; 
@@ -75,8 +75,8 @@ int main()
             
 			else if(tem[i] > 0) 
             { 
-                  tem[i] = tem[i] - time_quantum; 
-                  totall = totall + time_quantum; 
+                  tem[i] = tem[i] - tq; 
+                  totall = totall + tq; 
             } 
 
 	for(b=0;b<loci;b++)
